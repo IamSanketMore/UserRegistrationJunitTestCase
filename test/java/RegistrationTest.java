@@ -7,7 +7,7 @@ public class RegistrationTest
     public void TestPasswordIsMinimumEightDigitThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.checkPasswordRule("Sanket123");
+        boolean Result = checkname.checkPasswordRule("Sanket@123");
         Assertions.assertEquals(true, Result);
     }
     @Test
@@ -22,7 +22,7 @@ public class RegistrationTest
     public void TestPasswordMinimumOneUpperCaseThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.checkPasswordRule("Sanket123");
+        boolean Result = checkname.checkPasswordRule("Sanket@123");
         Assertions.assertEquals(true, Result);
     }
     @Test
@@ -37,7 +37,7 @@ public class RegistrationTest
     public void TestPasswordMinimumOneLowerCaseThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.checkPasswordRule("Sanket123");
+        boolean Result = checkname.checkPasswordRule("Sanket@123");
         Assertions.assertEquals(true, Result);
     }
     @Test
@@ -52,7 +52,7 @@ public class RegistrationTest
     public void TestPasswordMinimumOneNumberThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.checkPasswordRule("SanketMore1");
+        boolean Result = checkname.checkPasswordRule("Sanket@123");
         Assertions.assertEquals(true, Result);
     }
     @Test
@@ -60,8 +60,19 @@ public class RegistrationTest
         UserRegistration checkname = new UserRegistration();
         boolean Result = checkname.checkPasswordRule("SanketMore");
         Assertions.assertEquals(false, Result);
-
-
+    }
+    @Test
+    public void TestPasswordMinimumOneSpecialCharactersThenTrue()
+    {
+        UserRegistration checkname= new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("Sanket@123");
+        Assertions.assertEquals(true, Result);
+    }
+    @Test
+    public void TestPasswordMinimumOneSpecialCharactersThenFalse() {
+        UserRegistration checkname = new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("sanket123");
+        Assertions.assertEquals(false, Result);
     }
 }
 
