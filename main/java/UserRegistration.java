@@ -4,19 +4,19 @@ import java.util.regex.Pattern;
 
 public class UserRegistration
 {
-    public boolean emailValid(String name)
+    public boolean mobileNoValid(String name)
     {
-        String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2,3})?$";
+        String regx = "^[0-9]{2}+[:space:]+[0-9]{10}+$";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(name);
         if (matcher.matches())
         {
-            System.out.println("Email Is Valid");
+            System.out.println("Mobile Number Is Valid");
             return true;
         }
         else
         {
-            System.out.println("Email Is In-Valid");
+            System.out.println("Mobile Number Is In-Valid");
             return false;
         }
     }
@@ -25,12 +25,12 @@ public class UserRegistration
         Scanner scan = new Scanner(System.in);
         UserRegistration check = new UserRegistration();
 
-        while (true)
-        {
-            System.out.println("Enter Your Email: ");
-            String emailID= scan.nextLine();
-            check.emailValid(emailID);
-        }
+       while (true)
+       {
+            System.out.println("Enter Your Mobile Number:- ");
+            String mobileNumber= scan.nextLine();
+            check.mobileNoValid(mobileNumber);
+       }
 
     }
 }
