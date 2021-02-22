@@ -4,17 +4,19 @@ import java.util.regex.Pattern;
 
 public class UserRegistration
 {
-    public boolean firstNameValid(String name)
+    public boolean lastNameValid(String name)
     {
         String regx = "^[A-Z]{1}[a-zA-Z]{3,}";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(name);
-        if (matcher.matches()){
-            System.out.println("Entered Name Valid");
+        if (matcher.matches())
+        {
+            System.out.println("Last Name Is Valid");
             return true;
         }
-        else {
-            System.out.println("Entered Name is Invalid");
+        else
+        {
+            System.out.println("Last Name Is In-Valid");
             return false;
         }
     }
@@ -25,9 +27,9 @@ public class UserRegistration
 
         while (true)
         {
-            System.out.println("Enter Your First Name: ");
-            String firstName = scan.nextLine();
-            check.firstNameValid(firstName);
+            System.out.println("Enter Your Last Name: ");
+            String lastName = scan.nextLine();
+            check.lastNameValid(lastName);
         }
     }
 }
