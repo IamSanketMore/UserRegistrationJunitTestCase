@@ -6,17 +6,17 @@ public class UserRegistration
 {
     public boolean checkPasswordRule(String passWord)
     {
-        String regx = "^[a-zA-z]{8,}";
+        String regx = "^(?=.*[A-Z])(?=.*[a-z]).{8,}";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(passWord);
         if (matcher.matches())
         {
-            System.out.println("Mobile Number Is Valid");
+            System.out.println("Password Is Valid");
             return true;
         }
         else
         {
-            System.out.println("Mobile Number Is In-Valid");
+            System.out.println("Password Is In-Valid");
             return false;
         }
     }
@@ -27,9 +27,9 @@ public class UserRegistration
 
        while (true)
        {
-            System.out.println("Enter Your Mobile Number:- ");
-            String mobileNumber= scan.nextLine();
-            check.checkPasswordRule(mobileNumber);
+            System.out.println("Enter Your Password:- ");
+            String passWord= scan.nextLine();
+            check.checkPasswordRule(passWord);
        }
 
     }
