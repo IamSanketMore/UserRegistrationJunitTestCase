@@ -4,11 +4,11 @@ import java.util.regex.Pattern;
 
 public class UserRegistration
 {
-    public boolean mobileNoValid(String name)
+    public boolean checkPasswordRule(String passWord)
     {
-        String regx = "^[0-9]{2}+[:space:]+[0-9]{10}+$";
+        String regx = "^[a-zA-z]{8,}";
         Pattern pattern = Pattern.compile(regx);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(passWord);
         if (matcher.matches())
         {
             System.out.println("Mobile Number Is Valid");
@@ -29,7 +29,7 @@ public class UserRegistration
        {
             System.out.println("Enter Your Mobile Number:- ");
             String mobileNumber= scan.nextLine();
-            check.mobileNoValid(mobileNumber);
+            check.checkPasswordRule(mobileNumber);
        }
 
     }
