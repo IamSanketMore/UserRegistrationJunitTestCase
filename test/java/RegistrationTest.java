@@ -18,5 +18,38 @@ public class RegistrationTest
         Assertions.assertEquals(false, Result);
     }
 
+    @Test
+    public void TestPasswordMinimumOneUpperCaseThenTrue()
+    {
+        UserRegistration checkname= new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("Sanketmore");
+        Assertions.assertEquals(true, Result);
+    }
+    @Test
+    public void TestPasswordMinimumOneUpperCaseThenFalse()
+    {
+        UserRegistration checkname= new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("sanketmore");
+        Assertions.assertEquals(false, Result);
+    }
+
+    @Test
+    public void TestPasswordMinimumOneLowerCaseThenTrue()
+    {
+        UserRegistration checkname= new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("SanketMore");
+        Assertions.assertEquals(true, Result);
+    }
+    @Test
+    public void TestPasswordMinimumOneLowerCaseThenFalse()
+    {
+        UserRegistration checkname= new UserRegistration();
+        boolean Result = checkname.checkPasswordRule("SANKETMORE");
+        Assertions.assertEquals(false, Result);
+    }
+
+
+
+
 }
 
