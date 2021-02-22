@@ -4,49 +4,32 @@ import org.junit.jupiter.api.Test;
 public class RegistrationTest
 {
     @Test
-    public void TestEmailFirstNameIsLowerCaseThenTrue()
+    public void TestMobileNumberHaveCountryCodeThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.emailValid("abc.xyz@bridgelabz.com.in");
+        boolean Result = checkname.mobileNoValid("91 8180019348");
         Assertions.assertEquals(true, Result);
     }
     @Test
-    public void TestEmailFirstNameIsLowerCaseThenfalse()
+    public void TestMobileNumberHaveCountryCodeThenfalse()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.emailValid("Abc.xyz@bridgelabz.com.in");
+        boolean Result = checkname.mobileNoValid("8180019348");
         Assertions.assertEquals(false, Result);
     }
     @Test
-    public void TestEmailLastShouldBe_Com_And_In_ThenTrue()
+    public void TestMobileNumberIsCorrectTenDigitThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.emailValid("abc.xyz@bridgelabz.com");
-        boolean Result1 = checkname.emailValid("abc.xyz@bridgelabz.com.in");
-        Assertions.assertEquals(true, Result);
-        Assertions.assertEquals(true, Result1);
-    }
-
-    @Test
-    public void TestEmailLastShouldBe_Com_And_In_Thenfalse() {
-        UserRegistration checkname = new UserRegistration();
-        boolean Result = checkname.emailValid("asbc@huj");
-        Assertions.assertEquals(false, Result);
-
-    }
-    @Test
-    public void TestEmailSignAtTheRateIsCompulsaryThenTrue()
-    {
-        UserRegistration checkname = new UserRegistration();
-        boolean Result = checkname.emailValid("abc.xyz@bridgelabz.com.in");
+        boolean Result = checkname.mobileNoValid("91 8180019348");
         Assertions.assertEquals(true, Result);
     }
 
     @Test
-    public void TestEmailSignAtTheRateIsCompulsaryThenFalse()
+    public void TestMobileNumberIsCorrectTenDigitThenfalse()
     {
         UserRegistration checkname = new UserRegistration();
-        boolean Result = checkname.emailValid("abc.xyzgmail.com");
+        boolean Result = checkname.mobileNoValid("91 8180019");
         Assertions.assertEquals(false, Result);
 
     }
