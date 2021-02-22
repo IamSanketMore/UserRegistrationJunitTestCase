@@ -4,19 +4,19 @@ import java.util.regex.Pattern;
 
 public class UserRegistration
 {
-    public boolean lastNameValid(String name)
+    public boolean emailValid(String name)
     {
-        String regx = "^[A-Z]{1}[a-zA-Z]{3,}";
+        String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2,3})?$";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(name);
         if (matcher.matches())
         {
-            System.out.println("Last Name Is Valid");
+            System.out.println("Email Is Valid");
             return true;
         }
         else
         {
-            System.out.println("Last Name Is In-Valid");
+            System.out.println("Email Is In-Valid");
             return false;
         }
     }
@@ -27,9 +27,10 @@ public class UserRegistration
 
         while (true)
         {
-            System.out.println("Enter Your Last Name: ");
-            String lastName = scan.nextLine();
-            check.lastNameValid(lastName);
+            System.out.println("Enter Your Email: ");
+            String emailID= scan.nextLine();
+            check.emailValid(emailID);
         }
+
     }
 }
