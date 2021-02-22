@@ -7,28 +7,28 @@ public class RegistrationTest
     public void TestFirstNameValidThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.firstNameValid("Sanket");
+        boolean Result = checkname.lastNameValid("More");
         Assertions.assertEquals(true, Result);
     }
     @Test
     public void TestFirstNameValidThenfalse()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.firstNameValid("sanket");
+        boolean Result = checkname.lastNameValid("more");
         Assertions.assertEquals(false, Result);
     }
     @Test
     public void TestFirstNameThreeMinimumTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.firstNameValid("Sanket");
+        boolean Result = checkname.lastNameValid("More");
         Assertions.assertEquals(true, Result);
     }
     @Test
     public void TestFirstNameThreeMinimumFalse()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.firstNameValid("Sa");
+        boolean Result = checkname.lastNameValid("Mo");
         Assertions.assertEquals(false, Result);
     }
 }
