@@ -6,7 +6,7 @@ public class UserRegistration
 {
     public boolean checkPasswordRule(String passWord)
     {
-        String regx = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}";
+        String regx = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:;<>?/~_+-=|\\]]).{8,}$";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(passWord);
         if (matcher.matches())
