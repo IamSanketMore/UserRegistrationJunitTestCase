@@ -4,34 +4,19 @@ import org.junit.jupiter.api.Test;
 public class RegistrationTest
 {
     @Test
-    public void TestMobileNumberHaveCountryCodeThenTrue()
+    public void TestPasswordIsMinimumEightDigitThenTrue()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.mobileNoValid("91 8180019348");
+        boolean Result = checkname.checkPasswordRule("Sanketmore");
         Assertions.assertEquals(true, Result);
     }
     @Test
-    public void TestMobileNumberHaveCountryCodeThenfalse()
+    public void TestPasswordIsMinimumEightDigitThenfalse()
     {
         UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.mobileNoValid("8180019348");
+        boolean Result = checkname.checkPasswordRule("Sanket");
         Assertions.assertEquals(false, Result);
     }
-    @Test
-    public void TestMobileNumberIsCorrectTenDigitThenTrue()
-    {
-        UserRegistration checkname= new UserRegistration();
-        boolean Result = checkname.mobileNoValid("91 8180019348");
-        Assertions.assertEquals(true, Result);
-    }
 
-    @Test
-    public void TestMobileNumberIsCorrectTenDigitThenfalse()
-    {
-        UserRegistration checkname = new UserRegistration();
-        boolean Result = checkname.mobileNoValid("91 8180019");
-        Assertions.assertEquals(false, Result);
-
-    }
 }
 
