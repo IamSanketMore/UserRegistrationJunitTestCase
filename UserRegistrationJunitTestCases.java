@@ -4,75 +4,44 @@ import org.junit.Test;
 public class UserRegistrationJunitTestCases
 {
     @Test
-    public void TestFirstNameValidThenHAPPY()
+    public void TestFirstNameValidThenTrue()
     {
         RegistrationMethods checkObj = new RegistrationMethods();
-        String Result = checkObj.checkFirstName("Sanket");
-        Assert.assertEquals("HAPPY", Result);
-    }
-    @Test
-    public void TestFirstNameValidThenSAD()
-    {
-        RegistrationMethods checkObj = new RegistrationMethods();
-        String Result = checkObj.checkFirstName("sanket");
-        Assert.assertEquals("SAD", Result);
-    }
-    @Test
-    public void TestLastNameValidThenHAPPY()
-    {
-        RegistrationMethods checkObj= new RegistrationMethods();
-        String Result = checkObj.checkLastName("More");
-        Assert.assertEquals("HAPPY", Result);
-    }
-    @Test
-    public void TestLastNameValidThenSAD()
-    {
-        RegistrationMethods checkObj = new RegistrationMethods();
-        String Result = checkObj.checkLastName("sanket");
-        Assert.assertEquals("SAD", Result);
+        boolean Result = checkObj.checkFirstName("Sanket");
+        Assert.assertEquals(true, Result);
     }
 
     @Test
-    public void TestEmailNameValidThenHAPPY()
+    public void TestLastNameValidThenTrue()
     {
-        RegistrationMethods checkObj = new RegistrationMethods();
-        String Result = checkObj.checkEmail("abc.xyz@bridgelabz.com.in");
-        Assert.assertEquals("HAPPY", Result);
-    }
-    @Test
-    public void TestEmailNameValidThenSAD()
-    {
-        RegistrationMethods checkObj = new RegistrationMethods();
-        String Result = checkObj.checkEmail("abc.xyzbridgelabz.c");
-        Assert.assertEquals("SAD", Result);
+        RegistrationMethods checkObj= new RegistrationMethods();
+        boolean Result = checkObj.checkLastName("More");
+        Assert.assertEquals(true, Result);
     }
 
     @Test
-    public void TestMobileValidThenHAPPY()
+    public void TestEmailNameValidThenTrue()
     {
-        RegistrationMethods checkObj= new RegistrationMethods();
-        String Result = checkObj.checkMobile("91 1234567890");
-        Assert.assertEquals("HAPPY", Result);
+        RegistrationMethods checkObj = new RegistrationMethods();
+        boolean Result = checkObj.checkEmail("abc.xyz@bridgelabz.com.in");
+        Assert.assertEquals(true, Result);
     }
+
     @Test
-    public void TestMobileValidThenSAD()
+    public void TestMobileValidThenTrue()
     {
         RegistrationMethods checkObj= new RegistrationMethods();
-        String Result = checkObj.checkMobile("9 1234567890");
-        Assert.assertEquals("SAD", Result);
+        boolean Result = checkObj.checkMobile("91 1234567890");
+        Assert.assertEquals(true, Result);
     }
+
     @Test
-    public void TestPasswordValidThenHAPPY()
+    public void TestPasswordValidThenTrue()
     {
         RegistrationMethods checkObj= new RegistrationMethods();
-        String Result = checkObj.checkPasswordRule("Sanket@123");
-        Assert.assertEquals("HAPPY", Result);
+        boolean Result = checkObj.checkPasswordRule("Sanket@123");
+        Assert.assertEquals(true, Result);
     }
-    @Test
-    public void TestPasswordValidThenSAD()
-    {
-        RegistrationMethods checkObj= new RegistrationMethods();
-        String Result = checkObj.checkPasswordRule("sanket@123");
-        Assert.assertEquals("SAD", Result);
-    }
+
+
 }
