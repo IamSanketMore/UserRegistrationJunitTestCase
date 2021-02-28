@@ -1,3 +1,4 @@
+//-------------------------Custom Exception UserRegistrationException created ------------------ //
 public class UserRegistrationException extends Exception
 {
     enum ExceptionType
