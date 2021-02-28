@@ -3,7 +3,7 @@ import java.util.*;
 public class UserRegistration
 {
 
-    public static void main(String args []) throws UserRegistrationException
+    public static void main(String [] args) throws UserRegistrationException
     {
         Scanner scanReader = new Scanner(System.in);
 
