@@ -4,7 +4,7 @@ import org.junit.rules.ExpectedException;
 
 public class RegistrationTest
 {
-    //---------------------First Name Null Exception Test  --------------------------------
+    //---------------------First Name Null Exception Test  -------------------------------- //
     @Test
     public void givenFirstNameAsNull_ReturnException()
     {
